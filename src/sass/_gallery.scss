@@ -2,6 +2,14 @@ p {
   margin: 0;
 }
 /* --------------------------------------- */
+
+form {
+  padding: 40px 15px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  // background-color: rgb(191, 247, 202);
+}
 .load-more.hidden {
   display: none;
 }
@@ -22,9 +30,9 @@ p {
   font-family: 'Space Mono', monospace;
   outline: none;
   border: none;
-  padding: 5px 8px;
+  min-width: 200px;
+  width: 30%;
   border-radius: 12px;
-  margin-right: 10px;
   &:focus {
     border: 2px solid yellow;
   }
@@ -57,10 +65,6 @@ p {
   display: flex;
   flex-wrap: wrap;
 
-  // max-width: 1140px;
-  // margin: 20px auto;
-
-  // gap: 10px;
   align-items: stretch;
   justify-content: flex-start;
   gap: 30px 15px;
@@ -72,27 +76,24 @@ p {
   margin: 50px auto;
 }
 .photo-card {
+  max-width: 24%;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  flex-basis: calc((100% - 40px) / 5);
 
-  transition: box-shadow 250ms ease, transform 250ms ease;
+  box-shadow: 0 0 6px -1px rgb(113, 143, 119);
 }
 .photo-cardm:hover,
 .photo-card:focus {
   transform: scale(1.04);
 
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
 
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .photo-card:hover img {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
 }
 
 .gallery .photo-card img {
@@ -100,8 +101,7 @@ p {
   max-width: 100%;
   height: 200%;
   object-fit: cover;
-  transition: border-top-left-radius 250ms ease,
-    border-top-right-radius 250ms ease;
+  transition: border-radius 250ms ease;
 }
 .info {
   display: flex;
@@ -113,4 +113,8 @@ p {
 }
 .info-item {
   font-size: 10px;
+}
+.gallery .photo-card .info-item b {
+  font-size: 14px;
+  opacity: 0.6;
 }
